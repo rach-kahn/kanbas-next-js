@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Assignments() {
   return (
     <div id="wd-assignments">
@@ -9,10 +11,10 @@ export default function Assignments() {
         ASSIGNMENTS 40% of Total <button>+</button> </h3>
       <ul id="wd-assignment-list">
         <li className="wd-assignment-list-item">
-          <a href="/Courses/1234/Assignments/123"
+          <Link href="/Courses/1234/Assignments/123"
              className="wd-assignment-link" >
             A1 - ENV + HTML
-          </a>
+          </Link>
           <div className="wd-assignment-info">
             Multiple Modules | <strong>Not availbe until</strong> May 6 at 12:00am |
             <br />
@@ -20,10 +22,10 @@ export default function Assignments() {
           </div>
            </li>
         <li className="wd-assignment-list-item">
-          <a href="/Courses/1234/Assignments/123"
+          <Link href="/Courses/1234/Assignments/123"
              className="wd-assignment-link" >
             A2 - CSS + BOOTSTRAP
-          </a>
+          </Link>
           <div className="wd-assignment-info">
             Multiple Modules | <strong>Not availbe until</strong> May 13 at 12:00am |
             <br />
@@ -31,10 +33,10 @@ export default function Assignments() {
           </div>
         </li>
         <li className="wd-assignment-list-item">
-          <a href="/Courses/1234/Assignments/123"
+          <Link href="/Courses/1234/Assignments/123"
              className="wd-assignment-link" >
             A3 - JAVASCRIPT + REACT
-          </a>
+          </Link>
           <div className="wd-assignment-info">
             Multiple Modules | <strong>Not availbe until</strong> May 20 at 12:00am |
             <br />
@@ -46,10 +48,10 @@ export default function Assignments() {
         QUIZZES 10% of Total <button>+</button> </h3>
         <ul id="wd-assignment-list">
         <li className="wd-assignment-list-item">
-          <a href="/Courses/1234/Assignments/123"
+          <Link href="/Courses/1234/Assignments/123"
              className="wd-assignment-link" >
             Q1
-          </a>
+          </Link>
           <div className="wd-assignment-info">
             <strong>Not availbe until</strong> Sep 19 at 12:00am |
             <br />
@@ -57,10 +59,10 @@ export default function Assignments() {
           </div>
            </li>
         <li className="wd-assignment-list-item">
-          <a href="/Courses/1234/Assignments/123"
+          <Link href="/Courses/1234/Assignments/123"
              className="wd-assignment-link" >
             Q2
-          </a>
+          </Link>
           <div className="wd-assignment-info">
             <strong>Not availbe until</strong> Sep 26 at 12:00am |
             <br />
@@ -68,10 +70,10 @@ export default function Assignments() {
           </div>
         </li>
         <li className="wd-assignment-list-item">
-          <a href="/Courses/1234/Assignments/123"
+          <Link href="/Courses/1234/Assignments/123"
              className="wd-assignment-link" >
             Q3
-          </a>
+          </Link>
           <div className="wd-assignment-info">
             <strong>Not availbe until</strong> Oct 3 at 12:00am |
             <br />
@@ -83,10 +85,10 @@ export default function Assignments() {
         EXAMS 20% of Total <button>+</button> </h3>
               <ul id="wd-assignment-list">
         <li className="wd-assignment-list-item">
-          <a href="/Courses/1234/Assignments/123"
+          <Link href="/Courses/1234/Assignments/123"
              className="wd-assignment-link" >
             X1
-          </a>
+          </Link>
           <div className="wd-assignment-info">
             <strong>Not availbe until</strong> Oct 24 at 12:00am |
             <br />
@@ -94,10 +96,10 @@ export default function Assignments() {
           </div>
            </li>
         <li className="wd-assignment-list-item">
-          <a href="/Courses/1234/Assignments/123"
+          <Link href="/Courses/1234/Assignments/123"
              className="wd-assignment-link" >
             X2
-          </a>
+          </Link>
           <div className="wd-assignment-info">
             <strong>Not availbe until</strong> Dec 3 at 12:00am |
             <br />
@@ -109,28 +111,28 @@ export default function Assignments() {
         PROJECT 30% of Total <button>+</button> </h3>
               <ul id="wd-assignment-list">
         <li className="wd-assignment-list-item">
-          <a href="/Courses/1234/Assignments/123"
+          <Link href="/Courses/1234/Assignments/123"
              className="wd-assignment-link" >
             Project - Kambaz Quizzes
-          </a>
+          </Link>
           <div className="wd-assignment-info">
             <strong>Due</strong> Dec 7 at 11:59pm | 100 pts
           </div>
            </li>
         <li className="wd-assignment-list-item">
-          <a href="/Courses/1234/Assignments/123"
+          <Link href="/Courses/1234/Assignments/123"
              className="wd-assignment-link" >
             Project - Kambaz Pazza
-          </a>
+          </Link>
           <div className="wd-assignment-info">
             <strong>Due</strong> Dec 7 at 11:59pm | 100 pts
           </div>
         </li>
         <li className="wd-assignment-list-item">
-          <a href="/Courses/1234/Assignments/123"
+          <Link href="/Courses/1234/Assignments/123"
              className="wd-assignment-link" >
             Project - Social Network
-          </a>
+          </Link>
           <div className="wd-assignment-info">
             <strong>Due</strong> Dec 7 at 11:59pm | 100 pts
           </div>
