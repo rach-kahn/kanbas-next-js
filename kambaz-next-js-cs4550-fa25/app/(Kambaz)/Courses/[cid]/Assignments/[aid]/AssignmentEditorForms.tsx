@@ -1,14 +1,19 @@
+"use client";
+import { useParams } from "next/navigation";
 import React from 'react';
 import { Button, Col, Form, FormCheck, FormControl, FormLabel, FormSelect, InputGroup, Row } from 'react-bootstrap';
 import FormRange from 'react-bootstrap/esm/FormRange';
 import InputGroupText from 'react-bootstrap/esm/InputGroupText';
+import { assignments } from "@/app/(Kambaz)/Database";
 
 export default function AssignmentEditorForms() {
+     const {cid, aid} = useParams();
+   const assignment = assignments.find(a => a._id === aid && a.course === cid);
     return (
         <>
             <div id="wd-name">
                 <Row className="mb-3">
-                    <FormLabel>Assignment Name</FormLabel>
+                    <FormLabel>{assignment?.title}</FormLabel>
                     <Col sm={10}>
                         <FormControl type="text" placeholder="A1" />
                     </Col>
