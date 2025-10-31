@@ -1,4 +1,6 @@
+"use client"
 import { useState } from "react";
+import React from "react";
 export default function EventObject() {
     const [event, setEvent] = useState(null);
     const handleClick = (e: any) => {
