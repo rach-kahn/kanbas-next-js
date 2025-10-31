@@ -14,7 +14,7 @@ import ReduxExamples from "./ReduxExamples/ReduxExamples";
 
 
 import { Provider } from "react-redux";
-import store from "./store/page";
+import store from "./store/store";
 export default function Lab4() {
     function sayHello() {
         alert("Hello");
