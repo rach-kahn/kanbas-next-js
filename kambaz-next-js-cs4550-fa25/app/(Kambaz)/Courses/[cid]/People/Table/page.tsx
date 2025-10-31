@@ -4,11 +4,11 @@ import { Table } from "react-bootstrap";
 import { useParams } from "next/navigation";
 import { users } from "@/app/(Kambaz)/Database";
 import { enrollments } from "@/app/(Kambaz)/Database";
-
-
+import * as db from "@/app/(Kambaz)/Database";
 import { FaUserCircle } from "react-icons/fa";
 export default function PeopleTable() {
   const { cid } = useParams();
+   const { users, enrollments } = db;
 
   return (
     <div id="wd-people-table">
