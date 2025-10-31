@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 "use client";
+
 import { ReactNode } from "react";
 import { courses } from "../../Database";
 import CourseNavigation from "./Navigation";
