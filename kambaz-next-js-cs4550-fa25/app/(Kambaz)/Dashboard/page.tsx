@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewCourse, deleteCourse, updateCourse } from "../Courses/[cid]/reducer";
 export default function Dashboard() {
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
   const { courses } = useSelector((state: any) => state.coursesReducer); 
   const {wer} = useSelector((state: any) => state.qweReducer);
   const dispatch = useDispatch();
@@ -19,19 +20,18 @@ export default function Dashboard() {
     startDate: "2023-09-10", endDate: "2023-12-15",
     image: "/images/reactjs.jpg", description: "New Description"
   });
-  const { currentUser } = useSelector((state: any) => state.accountReducer);
   const state = useSelector(state => state);
   const { enrollments } = db;
-
   if (!currentUser )
  {
   return "Loading...test";
  }
-
   return (
     <div id="wd-dashboard">
-      {JSON.stringify(wer)}
-      <h1 id="wd-dashboard-title">Dashboard</h1> <hr />
+<pre>      
+      {/* {JSON.stringify(currentUser, null, 2)}
+         {currentUser._id} */}
+     </pre> <h1 id="wd-dashboard-title">Dashboard</h1> <hr />
       <h5>New Course
 
         <button className="btn btn-primary float-end"
