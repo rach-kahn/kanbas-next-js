@@ -10,7 +10,8 @@ import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewCourse, deleteCourse, updateCourse } from "../Courses/[cid]/reducer";
 export default function Dashboard() {
-  const { courses } = useSelector((state: any) => state.coursesReducer);
+  const { courses } = useSelector((state: any) => state.coursesReducer); 
+  const {wer} = useSelector((state: any) => state.qweReducer);
   const dispatch = useDispatch();
   //const [courses, setCourses] = useState<any[]>(db.courses);
   const [course, setCourse] = useState<any>({
@@ -24,11 +25,12 @@ export default function Dashboard() {
 
   if (!currentUser )
  {
-  return "Loading...";
+  return "Loading...test";
  }
 
   return (
     <div id="wd-dashboard">
+      {JSON.stringify(wer)}
       <h1 id="wd-dashboard-title">Dashboard</h1> <hr />
       <h5>New Course
 

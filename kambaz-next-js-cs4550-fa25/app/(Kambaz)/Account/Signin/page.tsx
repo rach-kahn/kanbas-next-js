@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { redirect } from "next/dist/client/components/navigation";
 import { setCurrentUser } from "../reducer";
+import { setWer } from "../qwe";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import * as db from "../../Database";
@@ -21,6 +22,7 @@ export default function Signin() {
     );
     if (!user) return;
     dispatch(setCurrentUser(user));
+    dispatch(setWer("hello world!!"))
     redirect("/Dashboard");
   };
 
