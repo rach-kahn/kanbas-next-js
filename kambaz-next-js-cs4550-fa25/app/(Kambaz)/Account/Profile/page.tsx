@@ -1,37 +1,69 @@
-import Link from "next/link";
-import { Col, Form, FormControl, FormSelect, Row } from "react-bootstrap";
+"use client";
+import { redirect } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setCurrentUser } from "../reducer";
+import * as client from "../client";
+import { RootState } from "../../store";
+import { Button, Col, Form, FormControl, FormSelect, Row } from "react-bootstrap";
 export default function Profile() {
+  const [profile, setProfile] = useState<any>({});
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector((state: RootState) => state.accountReducer);
+  const fetchProfile = () => {
+    if (!currentUser) return redirect("/Account/Signin");
+    setProfile(currentUser);
+  };
+  const signout = async () => {
+    await client.signout();
+    dispatch(setCurrentUser(null));
+    redirect("/Account/Signin");
+  };
+   const updateProfile = async () => {
+    const updatedProfile = await client.updateUser(profile);
+    dispatch(setCurrentUser(updatedProfile));
+  };
+
+  useEffect(() => {
+    fetchProfile();
+  }, []);
+
   return (
-    <div id="wd-profile-screen">
+    <div className="wd-profile-screen">
       <h3>Profile</h3>
-      <Row className="mb-3">
-        <Col sm={10}>
-          <FormControl defaultValue="alice" type="text" placeholder="username" className="wd-username" />
-        </Col>
-        <Col sm={10}>
-       <FormControl defaultValue="123" placeholder="password" type="password"
-          className="wd-password" />
-          </Col>
-          <Col sm={10}>
-         <FormControl defaultValue="Alice" type="text" placeholder="First Name" id="wd-firstname" />
-        </Col>
-        <Col sm={10}>
-       <FormControl defaultValue="Wonderland" type="text" placeholder="Last Name" id="wd-lastname" />
-        </Col>
-         <Col sm={10}>
-        <FormControl defaultValue="2000-01-01" type="date" id="wd-dob" />
-        </Col>
-        <Col sm={10}>
-        <FormControl defaultValue="alice@wonderland" type="email" id="wd-email" />
-        </Col>
-        <Col sm={10}>
-        <FormSelect> 
-          <option value="USER" defaultChecked>User</option>       <option value="ADMIN">Admin</option>
-          <option value="FACULTY">Faculty</option> <option value="STUDENT">Student</option>
-        </FormSelect>
-        </Col>
-        <Link id="wd-signin-btn" href="Signin" className="btn w-100 mb-2 btn-signout"> Sign out </Link>
-      </Row>
+      {profile && (
+        <div>
+          <FormControl id="wd-username" className="mb-2"
+            defaultValue={profile.username}
+            onChange={(e) => setProfile({ ...profile, username: e.target.value })} />
+          <FormControl id="wd-password" className="mb-2"
+            defaultValue={profile.password}
+            onChange={(e) => setProfile({ ...profile, password: e.target.value })} />
+          <FormControl id="wd-firstname" className="mb-2"
+            defaultValue={profile.firstName}
+            onChange={(e) => setProfile({ ...profile, firstName: e.target.value })} />
+          <FormControl id="wd-lastname" className="mb-2"
+            defaultValue={profile.lastName}
+            onChange={(e) => setProfile({ ...profile, lastName: e.target.value })} />
+          <FormControl id="wd-dob" className="mb-2" type="date"
+            defaultValue={profile.dob}
+            onChange={(e) => setProfile({ ...profile, dob: e.target.value })} />
+          <FormControl id="wd-email" className="mb-2"
+            defaultValue={profile.email}
+            onChange={(e) => setProfile({ ...profile, email: e.target.value })} />
+          <select className="form-control mb-2" id="wd-role"
+            onChange={(e) => setProfile({ ...profile, role: e.target.value })} >
+            <option value="USER">User</option>
+            <option value="ADMIN">Admin</option>
+            <option value="FACULTY">Faculty</option>{" "}
+            <option value="STUDENT">Student</option>
+          </select>
+           <button onClick={updateProfile} className="btn btn-primary w-100 mb-2"> Update </button>
+          <Button onClick={signout} className="w-100 mb-2" id="wd-signout-btn">
+            Sign out
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

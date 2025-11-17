@@ -2,9 +2,12 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
-import { courses } from "../../Database";
+//import { courses } from "../../Database"; //vid says comment this out
+// const initialState = {
+//  courses: courses,
+// };
 const initialState = {
- courses: courses,
+  courses: [],    
 };
 const coursesSlice = createSlice({
  name: "courses",
@@ -24,9 +27,12 @@ const coursesSlice = createSlice({
        c._id === course._id ? course : c
      ) as any;
    },
+   setCourses: (state, {payload: courses}) => {
+    state.courses = courses;  
+   },
  },
 });
-export const { addNewCourse, deleteCourse, updateCourse } =
+export const { addNewCourse, deleteCourse, updateCourse, setCourses } =
  coursesSlice.actions;
 export default coursesSlice.reducer;
 
