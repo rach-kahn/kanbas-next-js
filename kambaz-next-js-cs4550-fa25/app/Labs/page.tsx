@@ -31,7 +31,13 @@ export default function Labs() {
             Kambaz </Link> </li>
         <li>
           <a href="https://github.com/rach-kahn/kanbas-next-js/tree/main/kambaz-next-js-cs4550-fa25" id="wd-github">
-            My Github Repo </a> </li>
+            My Client Github Repo </a> </li>
+             <li>
+          <a href="https://github.com/rach-kahn/-kambaz-node-server-app.git" id="wd-github">
+            My Server Github Repo </a> </li>
+            <li>
+          <a href="https://kambaz-node-server-app-0of0.onrender.com" id="wd-github">
+            Server Running on Render </a> </li>
       </ul>
     </div>
   );

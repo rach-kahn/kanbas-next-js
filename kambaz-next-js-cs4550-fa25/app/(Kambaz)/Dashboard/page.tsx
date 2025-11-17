@@ -142,8 +142,7 @@ export default function Dashboard() {
                             event.preventDefault();
                             onEnrollUser(course._id);
                           }}
-                        >
-                          Enroll
+                        > Enroll
                         </button>
                       )}
 
