@@ -17,9 +17,7 @@ export default function Dashboard() {
   const dispatch = useDispatch();
   const { enrollments, showAll } = useSelector((state: any) => state.enrollmentsReducer);
   const enrolledCourseIds = enrollments.map((e: any) => e.course);
-  const isVisibleCourses = showAll
-    ? courses
-    : courses.filter((c: any) => enrolledCourseIds.includes(c._id));
+  
   const [course, setCourse] = useState<any>({
     _id: "0", name: "New Course", number: "New Number",
     startDate: "2023-09-10", endDate: "2023-12-15",
