@@ -15,7 +15,7 @@ export default function CourseNavigation() {
     { href: "Assignments", label: "Assignments" },
     { href: "Quizzes", label: "Quizzes" },
     { href: "Grades", label: "Grades" },
-    { href: "People/Table", label: "People" },
+    { href: "People", label: "People" },
   ];
   return (
     <div id="wd-courses-navigation" className="wd list-group fs-5 rounded-0">
